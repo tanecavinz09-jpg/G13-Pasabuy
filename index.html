@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f4ef">
+  <title>Log In | Online Pasabuy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <main class="login-page">
+    <aside class="brand-panel" aria-label="Online Pasabuy">
+      <a class="brand-logo" href="login.html" aria-label="Online Pasabuy home">
+        <img src="png.jpg" alt="Online Pasabuy">
+      </a>
+      <div class="brand-copy">
+        <p class="eyebrow">A little closer to what you love</p>
+        <h1>Good finds.<br><span>Made easy.</span></h1>
+        <p class="brand-description">Discover great picks and shop together with your trusted pasabuy community.</p>
+      </div>
+      <p class="brand-note"><span class="brand-note-mark" aria-hidden="true">✳</span> Your next favorite find starts here.</p>
+    </aside>
+
+    <section class="auth-panel" aria-labelledby="formTitle">
+      <a class="mobile-logo" href="login.html" aria-label="Online Pasabuy home">
+        <img src="png.jpg" alt="Online Pasabuy">
+      </a>
+      <div class="form-wrap">
+        <p class="eyebrow form-eyebrow">YOUR ACCOUNT</p>
+        <h2 id="formTitle">Welcome back</h2>
+        <p class="form-intro" id="formIntro">Sign in to continue to Online Pasabuy.</p>
+
+        <form id="authForm" class="auth-form" autocomplete="on">
+          <label class="field" for="username">
+            <span id="usernameLabel">Email address</span>
+            <input id="username" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+          </label>
+
+          <label id="emailRow" class="field role-field" for="email" hidden>
+            <span>Email address</span>
+            <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email">
+          </label>
+
+          <label class="field" for="password">
+            <span>Password</span>
+            <span class="password-field">
+              <input id="password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required>
+              <button type="button" id="togglePw" aria-label="Show password" title="Show password">Show</button>
+            </span>
+          </label>
+
+          <label id="roleRow" class="field role-field" for="role" hidden>
+            <span>Account type</span>
+            <select id="role" name="role">
+              <option value="customer">Customer</option>
+              <option value="pasabuyer">Pasabuyer</option>
+            </select>
+          </label>
+
+          <div class="form-options">
+            <label class="remember-option" for="remember">
+              <input type="checkbox" id="remember" name="remember">
+              <span>Remember me</span>
+            </label>
+          </div>
+
+          <p id="msg" class="msg" role="alert" aria-live="polite"></p>
+          <button class="submit-button" id="submitBtn" type="submit"><span id="submitText">Log in</span><span aria-hidden="true">&#8594;</span></button>
+        </form>
+
+        <p class="switch"><span id="switchText">New to Online Pasabuy?</span> <a href="#" id="switchLink">Create an account</a></p>
+        <p class="form-footer">By continuing, you agree to shop kindly and responsibly.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="login.js"></script>
+</body>
+</html>

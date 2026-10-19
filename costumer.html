@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Customer | Online Pasabuy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="customer.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <header class="top">
+    <a class="wordmark" href="customer.html">PASA<span>BUY</span><img src="png.jpg" alt="Online Pasabuy logo"></a>
+    <div class="right">
+      <span id="who"></span>
+      <button class="btn small ghost" id="logout" type="button">Log out</button>
+    </div>
+  </header>
+
+  <main class="wrap dashboard-wrap customer-wrap">
+    <section class="dashboard-heading">
+      <div>
+        <p class="eyebrow">YOUR SHOPPING WORKSPACE</p>
+        <h1>Shopping dashboard</h1>
+        <p>Post a request and follow every update from your pasabuyer.</p>
+      </div>
+      <div class="board-stats" aria-label="Request summary">
+        <div class="stat"><span>Open</span><b id="countOpen">0</b></div>
+        <div class="stat"><span>In progress</span><b id="countActive">0</b></div>
+        <div class="stat"><span>Delivered</span><b id="countDone">0</b></div>
+      </div>
+    </section>
+
+    <div class="customer-grid">
+      <section class="card request-form-panel" aria-labelledby="newRequestTitle">
+        <p class="eyebrow">START A SHOPPING RUN</p>
+        <h2 id="newRequestTitle">New request</h2>
+        <p class="panel-intro">Tell your pasabuyer what to find and where to bring it.</p>
+        <form id="reqForm">
+          <label class="form-field" for="item">
+            <span>What do you need?</span>
+            <input id="item" type="text" placeholder="e.g. 2 boxes of Choco Mucho" required>
+          </label>
+          <label class="form-field" for="store">
+            <span>Store or place</span>
+            <input id="store" type="text" placeholder="e.g. SM Dasmariñas" required>
+          </label>
+          <div class="row">
+            <label class="form-field" for="budget">
+              <span>Budget (&#8369;)</span>
+              <input id="budget" type="number" min="1" placeholder="500" required>
+            </label>
+            <label class="form-field" for="addr">
+              <span>Delivery address</span>
+              <input id="addr" type="text" placeholder="Your address" required>
+            </label>
+          </div>
+          <label class="form-field" for="notes">
+            <span>Notes <small>Optional</small></span>
+            <textarea id="notes" rows="3" placeholder="Size, color, preferred alternatives..."></textarea>
+          </label>
+          <button class="btn submit-request" type="submit">Post request <span aria-hidden="true">&#8594;</span></button>
+        </form>
+      </section>
+
+      <section class="board-section customer-board" aria-labelledby="customerBoardTitle">
+        <div class="board-heading">
+          <div>
+            <p class="eyebrow">REQUEST BOARD</p>
+            <h2 id="customerBoardTitle">Your requests</h2>
+          </div>
+          <span class="board-count" id="boardCount">0 requests</span>
+        </div>
+        <div class="filter-tabs" role="group" aria-label="Filter your requests">
+          <button class="filter-tab is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter-tab" type="button" data-filter="open" aria-pressed="false">Open</button>
+          <button class="filter-tab" type="button" data-filter="accepted" aria-pressed="false">In progress</button>
+          <button class="filter-tab" type="button" data-filter="delivered" aria-pressed="false">Delivered</button>
+        </div>
+        <div id="list" class="list request-board" aria-live="polite"></div>
+      </section>
+    </div>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="gps-tracker.js"></script>
+  <script src="customer.js"></script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+/* CUSTOMER PAGE STYLES */
+
+/* ===== Colors ===== */
+:root {
+  --red: #ff4b3a;
+  --dark-red: #c8102e;
+  --navy: #2a1b4d;
+  --purple: #6c4ff6;
+  --violet: #9b5de5;
+  --pink: #c466d8;
+}
+
+/* ===== Page basics ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: system-ui, "Segoe UI", Arial, sans-serif;
+  color: var(--navy);
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--purple), var(--violet) 55%, var(--pink) 85%, #e4c9f7) fixed;
+}
+
+h1, h2, h3, .btn {
+  font-family: Anton, Impact, "Arial Narrow", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+}
+
+/* ===== White card ===== */
+.card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(42, 27, 77, 0.25);
+}
+
+/* ===== Buttons ===== */
+.btn {
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 26px;
+  background: linear-gradient(#d68af0, var(--pink));
+  color: var(--navy);
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 0 var(--navy);
+}
+
+.btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 var(--navy);
+}
+
+.btn.small {
+  padding: 8px 16px;
+  font-size: 0.95rem;
+}
+
+.btn.ghost {
+  background: #fff;
+}
+
+.btn:focus-visible,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--red);
+  outline-offset: 2px;
+}
+
+/* ===== Form fields ===== */
+label {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+}
+
+input,
+select,
+textarea {
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  padding: 11px 12px;
+  border: 2px solid var(--navy);
+  border-radius: 6px;
+  background: #fff;
+  font: inherit;
+  font-weight: 500;
+  box-shadow: 3px 3px 0 var(--navy);
+}
+
+/* ===== Top bar ===== */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 5%;
+  background: #fff;
+  box-shadow: 0 4px 14px rgba(42, 27, 77, 0.3);
+}
+
+.top h1 {
+  font-size: 1.9rem;
+  font-style: italic;
+  color: var(--red);
+  transform: skew(-6deg);
+}
+
+.top h1 span {
+  color: var(--dark-red);
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+}
+
+/* ===== Page layout ===== */
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 20px 16px 40px;
+  display: grid;
+  gap: 18px;
+}
+
+.card h2 {
+  margin-bottom: 12px;
+  font-size: 1.5rem;
+  color: var(--red);
+}
+
+.h {
+  margin-bottom: 10px;
+  font-size: 1.6rem;
+  color: #fff;
+  text-shadow: 0 2px 0 var(--navy);
+}
+
+/* ===== Request cards ===== */
+.list {
+  display: grid;
+  gap: 14px;
+}
+
+.req {
+  position: relative;
+}
+
+.req h3 {
+  margin-bottom: 6px;
+  padding-right: 96px;
+  font-size: 1.3rem;
+}
+
+.req p {
+  margin: 3px 0;
+  font-size: 0.95rem;
+}
+
+.req .btn {
+  margin-top: 10px;
+}
+
+.badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.badge.open { background: #e08a00; }
+.badge.accepted { background: var(--purple); }
+.badge.delivered { background: #1f8a4c; }
+
+.empty {
+  padding: 16px;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ===== Phone screens ===== */
+@media (max-width: 480px) {
+  .right #who {
+    display: none;
+  }
+}
+
+/* ===== Customer page ===== */
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+#reqForm .btn {
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}

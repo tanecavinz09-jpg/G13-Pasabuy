@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pasabuyer | Online Pasabuy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="pasabuyer.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <header class="top">
+    <a class="wordmark" href="pasabuyer.html">PASA<span>BUY</span><img src="png.jpg" alt="Online Pasabuy logo"></a>
+    <div class="right">
+      <span id="who"></span>
+      <button class="btn small ghost" id="logout" type="button">Log out</button>
+    </div>
+  </header>
+
+  <main class="wrap dashboard-wrap">
+    <section class="dashboard-heading">
+      <div>
+        <p class="eyebrow">PASABUYER WORKSPACE</p>
+        <h1>Request board</h1>
+        <p>Pick up a request, keep the customer in the loop, and close the loop after delivery.</p>
+      </div>
+      <div class="board-stats" aria-label="Request summary">
+        <div class="stat"><span>Available</span><b id="countOpen">0</b></div>
+        <div class="stat"><span>In progress</span><b id="countActive">0</b></div>
+        <div class="stat"><span>Delivered</span><b id="done">0</b></div>
+      </div>
+    </section>
+
+    <section class="board-section" aria-labelledby="boardTitle">
+      <div class="board-heading">
+        <div>
+          <p class="eyebrow">YOUR QUEUE</p>
+          <h2 id="boardTitle">Requests</h2>
+        </div>
+        <span class="board-count" id="boardCount">0 requests</span>
+      </div>
+      <div class="filter-tabs" role="group" aria-label="Filter requests">
+        <button class="filter-tab is-active" type="button" data-filter="open" aria-pressed="true">Available</button>
+        <button class="filter-tab" type="button" data-filter="accepted" aria-pressed="false">My jobs</button>
+        <button class="filter-tab" type="button" data-filter="delivered" aria-pressed="false">Delivered</button>
+      </div>
+      <div id="board" class="list request-board" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="gps-tracker.js"></script>
+  <script src="pasabuyer.js"></script>
+</body>
+</html>
